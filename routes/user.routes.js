@@ -31,7 +31,7 @@ router.get(
     try {
       const { id, name } = req.user; // Assuming user object has _id and name fields
 
-      res.redirect(`http://localhost:5173/login?id=${id}&name=${name}`);
+      res.redirect(`https://joyful-douhua-1b7a4e.netlify.app/login?id=${id}&name=${name}`);
       return { id, name };
     } catch (error) {
       console.error("Error processing Google callback:", error);
