@@ -131,7 +131,7 @@ exports.googleCallback = (req, res, next) => {
 
         // Send token and user information as JSON response
         res.json({ token, fullName: user.name, role: user.role });
-        res.redirect("http://localhost:5173/");
+        res.redirect("https://joyful-douhua-1b7a4e.netlify.app/");
       });
     }
   )(req, res, next);
