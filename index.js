@@ -24,7 +24,7 @@ app.use(
 );
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow requests from this origin
+  origin: "https://joyful-douhua-1b7a4e.netlify.app", // Allow requests from this origin
   credentials: true, // Allow sending cookies with requests
 };
 
