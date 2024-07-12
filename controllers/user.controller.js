@@ -130,7 +130,7 @@ exports.googleCallback = (req, res, next) => {
         });
 
         // Send token and user information as JSON response
-        res.json({ token, name: user.name, role: user.role });
+        res.json({ token, fullName: user.name, role: user.role });
         res.redirect("http://localhost:5173/");
       });
     }
