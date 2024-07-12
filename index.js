@@ -24,19 +24,22 @@ app.use(
 );
 
 const corsOptions = {
-  origin: "*", // Allow requests from this origin
+  origin: "https://joyful-douhua-1b7a4e.netlify.app", // Allow requests from this origin
   credentials: true, // Allow sending cookies with requests
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, Authorization",
 };
 
 app.use(cors(corsOptions)); // Apply CORS middleware with options
 
 app.use((_, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", "https://joyful-douhua-1b7a4e.netlify.app");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   next();
 });
 
