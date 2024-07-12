@@ -3,7 +3,12 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("../models/user.model"); // Adjust the path to your User model
 
 passport.use(
-  new GoogleStrategy({}, async (accessToken, refreshToken, profile, done) => {
+  new GoogleStrategy({
+          clientID:
+        "557051405550-7tqk8f3us23mml5n63l7k1lnk0tqdpq4.apps.googleusercontent.com",
+      clientSecret: "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",
+      callbackURL: "http://localhost:5000/auth/google/callback",
+  }, async (accessToken, refreshToken, profile, done) => {
     try {
       let user = await User.findOne({ googleId: profile.id });
 
