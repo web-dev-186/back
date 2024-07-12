@@ -103,7 +103,7 @@ exports.googleLogin = passport.authenticate("google", {
 exports.googleCallback = (req, res, next) => {
   passport.authenticate(
     "google",
-    { failureRedirect: "http://localhost:5173/login" },
+    { failureRedirect: "https://joyful-douhua-1b7a4e.netlify.app/login" },
     async (err, user) => {
       if (err) return res.status(500).json({ msg: "Server error" });
       if (!user) return res.status(400).json({ msg: "User not found" });
