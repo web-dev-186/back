@@ -7,7 +7,7 @@ passport.use(
           clientID:
         "557051405550-7tqk8f3us23mml5n63l7k1lnk0tqdpq4.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: "https://back-5rnx.onrender.com/auth/google/callback",
   }, async (accessToken, refreshToken, profile, done) => {
     try {
       let user = await User.findOne({ googleId: profile.id });
